@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project(filesystem_lister C)
+include_directories(filesystem_lister include)
+add_executable(filesystem_lister app.c)
+set(CMAKE_C_FLAGS "-Wall -Wextra -Wpedantic -Werror")
+set(CMAKE_C_FLAGS_RELEASE "-O3")
