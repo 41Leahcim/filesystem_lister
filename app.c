@@ -5,11 +5,21 @@
 #include <string.h>
 #include <time.h>
 
-char entry_type(const char type){
+/// @brief Determines the entry type based on the entry d_type
+/// @param type The d_type of the directory entry
+/// @return d for directory, l for links, f for files, and u for everything else (unknown)
+char entry_type(const unsigned char type){
     switch(type){
+        // Directory
         case 4: return 'd';
+
+        // Link
         case 10: return 'l';
+
+        // File
         case 8: return 'f';
+
+        // Unknown
         default: return 'u';
     }
 }
